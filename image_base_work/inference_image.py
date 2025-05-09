@@ -6,7 +6,7 @@ import os
 from dotenv import load_dotenv
 
 from common.prompt_template import prompt_image_base
-from download_image_data import get_urls
+from image_base_work.download_image_data import get_urls
 from common.base_calss import Output,QA
 load_dotenv()
 

@@ -4,11 +4,10 @@ from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.output_parsers import PydanticOutputParser
 
-from pdf_chunking_save import attention_policy_chunking
 from common.prompt_template import prompt_pdf_base
 from openai import Client
 from common.base_calss import Output,QA
-from pdf_chunking_save import attention_policy_chunking
+from pdf_base_work.pdf_chunking_save import attention_policy_chunking
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -31,7 +30,7 @@ def generate_faq_json(info_detail):
         model = "gpt-4o-mini",
         messages=[
             {"role":"system","content":"You are a helpful assistant"},
-            {"role": "user" , "contnet":prompt}
+            {"role": "user" , "content":prompt}
         ],
         temperature=0,
         response_format={"type":"json_object"}
